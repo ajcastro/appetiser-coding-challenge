@@ -64,6 +64,7 @@ module.exports = {
 
     // My custom rules
     'func-names': 'off',
+    'no-console': 'off',
 
 
     // allow debugger during development only
