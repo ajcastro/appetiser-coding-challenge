@@ -120,6 +120,9 @@ const daysOfWeek = [
 ];
 
 export default {
+  async created() {
+    this.$axios.defaults.baseURL = process.env.API_URL;
+  },
   computed: {
     showCalendar() {
       return this.event.from && this.event.to;
@@ -195,8 +198,17 @@ export default {
   },
   methods: {
     async submit() {
-      // console.log(1234, this.event);
-      this.savedEvent = { ...this.event };
+      this.savedEvent = { ...await this.saveEvent(this.event) };
+      this.$q.notify({
+        color: 'positive',
+        icon: 'check',
+        position: 'top-right',
+        message: 'Event successfully saved',
+      });
+    },
+    async saveEvent(event) {
+      const { data } = await this.$axios.post('api/events', event);
+      return data;
     },
   },
 };
