@@ -76,7 +76,7 @@
           class="col-xs-12 col-md"
         >
           <div class="bg-info q-pa-lg rounded-borders text-white">
-            Please select from and to dates!
+            Please select date range.
           </div>
         </div>
         <div class="col-xs-12 col-md">
