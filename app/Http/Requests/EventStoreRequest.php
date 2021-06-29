@@ -27,6 +27,7 @@ class EventStoreRequest extends FormRequest
             'title' => ['required', 'string'],
             'from' => ['required', 'date'],
             'to' => ['required', 'date'],
+            'days' => [],
         ];
     }
 }
