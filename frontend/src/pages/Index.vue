@@ -79,7 +79,7 @@
         </div>
         <div
           v-if="!showCalendar"
-          class="col-xs-12 col-md"
+          class="col-xs-12 col-md-8"
         >
           <div class="bg-info q-pa-lg rounded-borders text-white">
             Please select date range.
