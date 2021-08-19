@@ -19,7 +19,7 @@
             <q-input
               v-model="event.title"
               class="col-12"
-              label="Event"
+              label="Event *"
               stack-label
               outlined
               dense
@@ -33,7 +33,7 @@
             <q-input
               v-model="event.from"
               class="col-12 col-sm-6"
-              label="From"
+              label="From *"
               stack-label
               outlined
               dense
@@ -44,7 +44,7 @@
             <q-input
               v-model="event.to"
               class="col-12 col-sm-6"
-              label="To"
+              label="To *"
               stack-label
               outlined
               dense
@@ -68,6 +68,12 @@
                 no-caps
                 color="primary"
               />
+            </div>
+            <div
+              class="col-12 text-italic text-grey"
+              style="font-size: 12px;"
+            >
+              * Indicates required fields.
             </div>
           </q-form>
         </div>
