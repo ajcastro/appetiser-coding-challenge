@@ -1,7 +1,8 @@
 import { mount, createLocalVue, shallowMount } from '@vue/test-utils';
-import QBUTTON from './demo/QBtn-demo.vue';
 import * as All from 'quasar';
-// import langEn from 'quasar/lang/en-us' // change to any language you wish! => this breaks wallaby :(
+import QBUTTON from './demo/QBtn-demo.vue';
+// import langEn from 'quasar/lang/en-us'
+// change to any language you wish! => this breaks wallaby :(
 const { Quasar } = All;
 
 const components = Object.keys(All).reduce((object, key) => {
@@ -19,7 +20,7 @@ describe('Mount Quasar', () => {
   const wrapper = mount(QBUTTON, {
     localVue,
   });
-  const vm = wrapper.vm;
+  const { vm } = wrapper;
 
   it('has a created hook', () => {
     expect(typeof vm.increment).toBe('function');
