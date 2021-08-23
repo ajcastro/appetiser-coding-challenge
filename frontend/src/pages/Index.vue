@@ -67,6 +67,7 @@
                 label="Save"
                 no-caps
                 color="primary"
+                :loading="saving"
               />
             </div>
             <div
@@ -179,6 +180,7 @@ export default {
   },
   data() {
     return {
+      saving: false,
       event: {
         title: '',
         from: null,
@@ -213,7 +215,10 @@ export default {
       });
     },
     async saveEvent(event) {
+      this.saving = true;
       const { data } = await this.$axios.post('api/events', event);
+      this.saving = false;
+
       return data;
     },
   },
